@@ -23,3 +23,4 @@ public class Visitor  implements Serializable {
     @ManyToOne
     private Room room;
 }
+ 
