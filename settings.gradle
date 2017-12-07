@@ -1,4 +1,5 @@
 rootProject.name = 'hotelservice'
 
 include 'domain'
+include 'rest'
 
