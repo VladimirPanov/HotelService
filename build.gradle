@@ -27,4 +27,5 @@ dependencies {
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	compile project(':domain')
 	compile project(':rest')
+	testCompile project(':domain')
 }
