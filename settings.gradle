@@ -1,5 +1,4 @@
 rootProject.name = 'hotelservice'
 
-include 'domain'
-include 'rest'
+include 'domain', 'rest'
 

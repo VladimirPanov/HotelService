@@ -1,6 +1,12 @@
 group = 'com.mystudy'
 version = '0.0.1-SNAPSHOT'
 
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+
+repositories {
+	mavenCentral()
+}
 buildscript {
 	ext {
 		springBootVersion = '1.5.9.RELEASE'
@@ -13,19 +19,49 @@ buildscript {
 	}
 }
 
-//sourceCompatibility = 1.8
+//subprojects {
+//	apply plugin: 'java'
+//	apply plugin: 'org.springframework.boot'
+//	sourceCompatibility = 1.8
+//	buildscript {
+//		ext {
+//			springBootVersion = '1.5.9.RELEASE'
+//		}
+//		repositories {
+//			mavenCentral()
+//		}
+//		dependencies {
+//			classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+//		}
+//	}
+//	dependencies {
+//		testCompile('org.springframework.boot:spring-boot-starter-test')
+//	}
+//}
+//project(':domain') {
+//	dependencies {
+//		compile('org.springframework.boot:spring-boot-starter-data-jpa')
+//		compileOnly('org.projectlombok:lombok')
+//	}
+//}
 
-apply plugin: 'java'
-apply plugin: 'org.springframework.boot'
-
-repositories {
-	mavenCentral()
-}
-
-
+//project(':rest') {
+//	dependencies {
+//		compile('org.springframework.boot:spring-boot-starter-data-jpa')
+//		compile('org.springframework.boot:spring-boot-starter-data-rest')
+//		runtime('org.springframework.boot:spring-boot-devtools')
+//		runtime('com.h2database:h2')
+//		compileOnly('org.projectlombok:lombok')
+//		testCompile('org.springframework.boot:spring-boot-starter-test')
+//		compile project(':domain')
+////		testCompile project(':domain')
+//	}
+//}
 dependencies {
-	testCompile('org.springframework.boot:spring-boot-starter-test')
 	compile project(':domain')
 	compile project(':rest')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
 	testCompile project(':domain')
+	testCompile('com.h2database:h2')
+//	testCompile project(':domain').sourceSets.test.output
 }
